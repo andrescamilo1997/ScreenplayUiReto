@@ -1,6 +1,5 @@
 package co.com.sofka.task.automationpractice.createanaccount;
 
-import co.com.sofka.task.automationpractice.contactus.BrowseToContactUS;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;

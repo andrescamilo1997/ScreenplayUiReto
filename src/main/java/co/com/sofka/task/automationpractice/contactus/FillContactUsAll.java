@@ -3,14 +3,16 @@ package co.com.sofka.task.automationpractice.contactus;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.sofka.userinterface.automationpractice.contacus.contactUs.*;
+import static co.com.sofka.userinterface.automationpractice.contacus.ContactUs.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FillContactUsAll implements Task {
     private String email;
     private String message;
     private String heading;
-    private String OrderReference;
+    private String orderReference;
 
 
     public FillContactUsAll useTheEmail(String email) {
@@ -28,8 +30,8 @@ public class FillContactUsAll implements Task {
         return this;
     }
 
-    public FillContactUsAll useTheOrderReference(String OrderReference) {
-        this.OrderReference = OrderReference;
+    public FillContactUsAll useTheOrderReference(String orderReference) {
+        this.orderReference = orderReference;
         return this;
     }
 
@@ -37,19 +39,16 @@ public class FillContactUsAll implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
 
+                WaitUntil.the(EMAIL,isVisible()).forNoMoreThan(10).seconds(),
+
                 Scroll.to(CHOOSE_HEADING),
                 SelectFromOptions.byVisibleText(heading).from(CHOOSE_HEADING),
 
                 Scroll.to(EMAIL),
                 Enter.theValue(email).into(EMAIL),
 
-
-
-                Scroll.to(ORDERREFERENCE),
-                Enter.theValue(OrderReference).into(ORDERREFERENCE),
-
-
-
+                Scroll.to(ORDER_REFERENCE),
+                Enter.theValue(orderReference).into(ORDER_REFERENCE),
 
                 Scroll.to(MESSAGE),
                 Enter.theValue(message).into(MESSAGE),

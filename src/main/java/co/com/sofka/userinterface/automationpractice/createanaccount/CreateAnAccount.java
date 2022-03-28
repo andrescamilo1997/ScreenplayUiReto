@@ -44,25 +44,13 @@ public class CreateAnAccount extends PageObject {
             .the("Day")
             .located(By.id("days"));
 
-    public static final Target SELECTOR_DAYS = Target
-            .the("Day")
-            .located(By.xpath("//*[@id=\"days\"]/option"));
-
     public static final Target MONTH = Target
             .the("Month")
             .located(By.id("months"));
 
-    public static final Target SELECTOR_MONTH = Target
-            .the("Month")
-            .located(By.xpath("//*[@id=\"months\"]/option"));
-
     public static final Target YEAR = Target
             .the("Year")
             .located(By.id("years"));
-
-    public static final Target SELECTOR_YEAR = Target
-            .the("Month")
-            .located(By.xpath("//*[@value=\""));
 
     public static final Target CHECK_NEWSLETTER = Target
             .the("Check Newsletter")
@@ -112,12 +100,8 @@ public class CreateAnAccount extends PageObject {
             .the("Mobile phone")
             .located(By.xpath("//*[@id=\"phone_mobile\"]"));
 
-    public static final Target ALIAS_FOR_REFERENCE = Target
-            .the("Alias for reference")
-            .located(By.id("alias"));
-
     public static final Target END_BUTTON_FOR_REGISTER = Target
-            .the("End button for Register")
+            .the("End button register")
             .located(By.id("submitAccount"));
 
     public static final Target MSG_ALL_OK_IN_REGISTER = Target
@@ -127,6 +111,7 @@ public class CreateAnAccount extends PageObject {
     public static final Target MSG_ALL_NOT_OK_IN_REGISTER = Target
             .the("End button for Register")
             .located(By.xpath("//*[@id=\"center_column\"]/div[1]"));
+
 
     public static final Target LOG_OUT = Target
             .the("Log out")

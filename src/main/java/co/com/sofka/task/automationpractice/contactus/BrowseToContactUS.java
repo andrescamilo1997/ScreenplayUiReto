@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
 
-import static co.com.sofka.userinterface.automationpractice.contacus.contactUs.PRIMARY_ELEMENT_MENU_CONTACTUS;
+import static co.com.sofka.userinterface.automationpractice.contacus.ContactUs.PRIMARY_ELEMENT_MENU_CONTACTUS;
 
 public class BrowseToContactUS implements Task {
     @Override

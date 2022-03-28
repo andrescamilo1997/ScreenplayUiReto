@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
 import static co.com.sofka.userinterface.automationpractice.createanaccount.CreateAnAccount.MSG_ALL_OK_IN_REGISTER;
-import static co.com.sofka.util.ChooseHeading.MESSAGEALLOKINREGISTER;
+import static co.com.sofka.util.Comparators.MESSAGE_ALL_OK_IN_REGISTER;
 
 public class QuestionCreateAnAccount implements Question<Boolean> {
 
@@ -15,7 +15,7 @@ public class QuestionCreateAnAccount implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         return (
-                MSG_ALL_OK_IN_REGISTER.resolveFor(actor).containsOnlyText(MESSAGEALLOKINREGISTER.getValue())
+                MSG_ALL_OK_IN_REGISTER.resolveFor(actor).containsOnlyText(MESSAGE_ALL_OK_IN_REGISTER.getValue())
                 );
     }
 

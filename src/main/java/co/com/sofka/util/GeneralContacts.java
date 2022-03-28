@@ -55,7 +55,7 @@ public class GeneralContacts {
         zipPostalCode = zipCode.substring(0,5);
         country = "United States";
         additionalInformation = firstName + " " +lastName;
-        homePhone = faker.phoneNumber().phoneNumber();
+        homePhone = String.valueOf(faker.number().numberBetween(111111111, 999999999));
         mobilePhone = faker.phoneNumber().cellPhone();
         orderReference = "Discos" + faker.rockBand().name();
         Message = "Cordial Saludo, me gustaria tener mayor informaciòn sobre: " + orderReference + "Gracias por su atenciòn" ;

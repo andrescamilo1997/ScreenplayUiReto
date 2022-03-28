@@ -18,11 +18,11 @@ public class Login extends PageObject {
             .located(By.xpath("//*[@id=\"SubmitLogin\"]"));
 
     public static final Target THEN_MESSAGE_OK = Target
-            .the("mensaje ok")
+            .the("message ok")
             .located(By.xpath("//*[@id=\"center_column\"]/h1"));
 
     public static final Target THEN_MESSAGE_NOT_OK = Target
-            .the("mensaje ok")
+            .the("message ok")
             .located(By.xpath("//*[@id=\"center_column\"]/div[1]"));
 
 }

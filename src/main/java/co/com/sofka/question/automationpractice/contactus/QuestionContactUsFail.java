@@ -3,8 +3,8 @@ package co.com.sofka.question.automationpractice.contactus;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 
-import static co.com.sofka.userinterface.automationpractice.contacus.contactUs.MSG_ALL_OK;
-import static co.com.sofka.util.ChooseHeading.MESSAGEALLOKINCONTACTUS;
+import static co.com.sofka.userinterface.automationpractice.contacus.ContactUs.MSG_ALL_OK;
+import static co.com.sofka.util.Comparators.MESSAGE_ALL_OK_IN_CONTACT_US;
 
 public class QuestionContactUsFail implements Question<Boolean> {
 
@@ -15,7 +15,7 @@ public class QuestionContactUsFail implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         return (
-                MSG_ALL_OK.resolveFor(actor).containsOnlyText(MESSAGEALLOKINCONTACTUS.getValue())
+                MSG_ALL_OK.resolveFor(actor).containsOnlyText(MESSAGE_ALL_OK_IN_CONTACT_US.getValue())
                 );
     }
 

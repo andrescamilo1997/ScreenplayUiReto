@@ -7,9 +7,11 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.sofka.userinterface.automationpractice.createanaccount.CreateAnAccount.*;
-import static co.com.sofka.util.ChooseHeading.*;
+import static co.com.sofka.util.Comparators.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FillCreatedAnAccount implements Task {
     private String email;
@@ -26,117 +28,111 @@ public class FillCreatedAnAccount implements Task {
     private String address;
     private String address2;
     private String city;
-    private String State;
+    private String state;
     private String zipPostal;
     private String country;
     private String additionalInformation;
     private String homePhone;
     private String mobilePhone;
-    private String aliasForReference;
 
     public FillCreatedAnAccount useEmail(String email) {
         this.email = email;
         return this;
     }
 
-    public FillCreatedAnAccount setTitle(String title) {
+    public FillCreatedAnAccount useTitle(String title) {
         this.title = title;
         return this;
     }
 
-    public FillCreatedAnAccount setFirstName(String firstName) {
+    public FillCreatedAnAccount useFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
-    public FillCreatedAnAccount setLastName(String lastName) {
+    public FillCreatedAnAccount useLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
 
-    public FillCreatedAnAccount setPassword(String password) {
+    public FillCreatedAnAccount usePassword(String password) {
         this.password = password;
         return this;
     }
 
 
 
-    public FillCreatedAnAccount setDayOfBirth(String dayOfBirth) {
+    public FillCreatedAnAccount useDayOfBirth(String dayOfBirth) {
         this.dayOfBirth = dayOfBirth;
         return this;
     }
 
-    public FillCreatedAnAccount setMonthOfBirth(String monthOfBirth) {
+    public FillCreatedAnAccount useMonthOfBirth(String monthOfBirth) {
         this.monthOfBirth = monthOfBirth;
         return this;
     }
 
-    public FillCreatedAnAccount setYearOfBirth(String yearOfBirth) {
+    public FillCreatedAnAccount useYearOfBirth(String yearOfBirth) {
         this.yearOfBirth = yearOfBirth;
         return this;
     }
 
-    public FillCreatedAnAccount setCompany(String company) {
+    public FillCreatedAnAccount useCompany(String company) {
         this.company = company;
         return this;
     }
 
-    public FillCreatedAnAccount setAddress(String address) {
+    public FillCreatedAnAccount useAddress(String address) {
         this.address = address;
         return this;
     }
 
-    public FillCreatedAnAccount setAddress2(String address2) {
+    public FillCreatedAnAccount useAddress2(String address2) {
         this.address2 = address2;
         return this;
     }
 
-    public FillCreatedAnAccount setCity(String city) {
+    public FillCreatedAnAccount useCity(String city) {
         this.city = city;
         return this;
     }
 
-    public FillCreatedAnAccount setState(String state) {
-        State = state;
+    public FillCreatedAnAccount useState(String state) {
+        this.state = state;
         return this;
     }
 
-    public FillCreatedAnAccount setZipPostal(String zipPostal) {
+    public FillCreatedAnAccount useZipPostal(String zipPostal) {
         this.zipPostal = zipPostal;
         return this;
     }
 
-    public FillCreatedAnAccount setCountry(String country) {
+    public FillCreatedAnAccount useCountry(String country) {
         this.country = country;
         return this;
     }
 
-    public FillCreatedAnAccount setAdditionalInformation(String additionalInformation) {
+    public FillCreatedAnAccount useAdditionalInformation(String additionalInformation) {
         this.additionalInformation = additionalInformation;
         return this;
     }
 
-    public FillCreatedAnAccount setHomePhone(String homePhone) {
+    public FillCreatedAnAccount useHomePhone(String homePhone) {
         this.homePhone = homePhone;
         return this;
     }
 
-    public FillCreatedAnAccount setMobilePhone(String mobilePhone) {
+    public FillCreatedAnAccount useMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
         return this;
     }
 
-    public FillCreatedAnAccount setAliasForReference(String aliasForReference) {
-        this.aliasForReference = aliasForReference;
-        return this;
-    }
-
-    public FillCreatedAnAccount setCheckNewsLetter(String checkNewsLetter) {
+    public FillCreatedAnAccount useCheckNewsLetter(String checkNewsLetter) {
         this.checkNewsLetter = checkNewsLetter;
         return this;
     }
 
-    public FillCreatedAnAccount setCheckEspecialOffers(String checkEspecialOffers) {
+    public FillCreatedAnAccount useCheckEspecialOffers(String checkEspecialOffers) {
         this.checkEspecialOffers = checkEspecialOffers;
         return this;
     }
@@ -144,6 +140,8 @@ public class FillCreatedAnAccount implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(EMAIL,isVisible()).forNoMoreThan(10).seconds(),
+
                 Scroll.to(EMAIL),
                 Enter.theValue(email).into(EMAIL),
 
@@ -151,13 +149,13 @@ public class FillCreatedAnAccount implements Task {
                 Click.on(BUTTON_SEND_FIRST_EMAIL),
 
 
-                Check.whether(title.equals(CHECKMR.getValue()))
+                Check.whether(title.equals(CHECK_MR.getValue()))
                         .andIfSo(
                                 Scroll.to(RADIOBUTTON_MR),
                                 Click.on(RADIOBUTTON_MR)
                         )
                         .otherwise(
-                                Check.whether(title.equals(CHECKMRS.getValue()))
+                                Check.whether(title.equals(CHECK_MRS.getValue()))
                                         .andIfSo(
                                                 Scroll.to(RADIOBUTTON_MRS),
                                                 Click.on(RADIOBUTTON_MRS)
@@ -182,12 +180,12 @@ public class FillCreatedAnAccount implements Task {
                 SelectFromOptions.byValue(yearOfBirth).from(YEAR),
 
 
-                Check.whether(CHECKNEWSLETTER.getValue().equals(checkNewsLetter))
+                Check.whether(CHECK_NEWS_LETTER.getValue().equals(checkNewsLetter))
                         .andIfSo(
                                 Scroll.to(CHECK_NEWSLETTER),
                                 Click.on(CHECK_NEWSLETTER)
                         ),
-                Check.whether(CHECKESPECIALOFFERS.getValue().equals(checkEspecialOffers))
+                Check.whether(CHECK_ALL_ESPECIAL_OFFERS.getValue().equals(checkEspecialOffers))
                         .andIfSo(
                                 Scroll.to(CHECK_ESPECIAL_OFFERS),
                                 Click.on(CHECK_ESPECIAL_OFFERS)
@@ -206,7 +204,7 @@ public class FillCreatedAnAccount implements Task {
                 Enter.theValue(city).into(CITY),
 
                 Scroll.to(STATE),
-                SelectFromOptions.byVisibleText(State).from(STATE),
+                SelectFromOptions.byVisibleText(state).from(STATE),
 
                 Scroll.to(Zip_CODE),
                 Enter.theValue(zipPostal).into(Zip_CODE),
@@ -216,6 +214,9 @@ public class FillCreatedAnAccount implements Task {
 
                 Scroll.to(OTHER_INFORMATION),
                 Enter.theValue(additionalInformation).into(OTHER_INFORMATION),
+
+                Scroll.to(HOME_PHONE),
+                Enter.theValue(homePhone).into(HOME_PHONE),
 
                 Scroll.to(MOBILE_PHONE),
                 Enter.theValue(mobilePhone).into(MOBILE_PHONE),

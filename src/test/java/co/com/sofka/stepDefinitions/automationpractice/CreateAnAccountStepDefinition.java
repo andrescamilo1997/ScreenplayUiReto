@@ -15,29 +15,30 @@ import static co.com.sofka.task.automationpractice.createanaccount.BrowseToCreat
 import static co.com.sofka.task.automationpractice.createanaccount.FillCreatedAnAccount.fillCreatedAnAccount;
 import static co.com.sofka.task.automationpractice.landingpage.OpenLandingPage.openLandingPage;
 import static co.com.sofka.userinterface.automationpractice.createanaccount.CreateAnAccount.MSG_ALL_NOT_OK_IN_REGISTER;
-import static co.com.sofka.util.ChooseHeading.*;
+import static co.com.sofka.util.Comparators.*;
 import static co.com.sofka.util.GeneralContacts.generalContacts;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class CreateAnAccountStepDefinition extends SetUp {
-    private static final Logger LOGGER = Logger.getLogger(CreateAnAccountStepDefinition.class);
-    private static final String ACTOR_NAME = "User";
-    private AutomationPracticeModel automationPracticeModel;
+    private static final    Logger LOGGER = Logger.getLogger(CreateAnAccountStepDefinition.class);
+    private static final    String ACTOR_NAME = "User";
+    private                 AutomationPracticeModel automationPracticeModel;
 
     @Given("Como usuario le gustaría registrarse en la aplicacion")
-    public void comoUsuarioLeGustaríaRegistrarseEnLaAplicacion() {
+    public void comoUsuarioLeGustariaRegistrarseEnLaAplicacion() {
         try {
             actorSetupTheBrowser(ACTOR_NAME);
-            theActorInTheSpotlight().wasAbleTo(openLandingPage());
+            theActorInTheSpotlight()
+                    .wasAbleTo(openLandingPage());
         }catch (Exception exception){
             LOGGER.warn(exception.getMessage());
         }
     }
 
     @When("Llenarìa un formulario de registro completo")
-    public void llenarìaUnFormularioDeRegistroCompleto() {
+    public void llenariaUnFormularioDeRegistroCompleto() {
 
         automationPracticeModel = generalContacts();
 
@@ -45,25 +46,26 @@ public class CreateAnAccountStepDefinition extends SetUp {
             theActorInTheSpotlight().attemptsTo(
                     createAnAccount(),
                     fillCreatedAnAccount()
-                            .useEmail(automationPracticeModel.getEmail())
-                            .setTitle(automationPracticeModel.getTitle())
-                            .setFirstName(automationPracticeModel.getFirstName())
-                            .setLastName(automationPracticeModel.getLastName())
-                            .setPassword(automationPracticeModel.getPassword())
-                            .setDayOfBirth(automationPracticeModel.getDayOfBrith())
-                            .setMonthOfBirth(automationPracticeModel.getMonthOfBirth())
-                            .setYearOfBirth(automationPracticeModel.getYearOfBirth())
-                            .setCheckNewsLetter(automationPracticeModel.getCheckNewsLetter())
-                            .setCheckEspecialOffers(automationPracticeModel.getReceiveSpecialOffers())
-                            .setCompany(automationPracticeModel.getCompany())
-                            .setAddress(automationPracticeModel.getAddress())
-                            .setCity(automationPracticeModel.getCity())
-                            .setAddress2(automationPracticeModel.getAddressL2())
-                            .setState(automationPracticeModel.getState())
-                            .setZipPostal(automationPracticeModel.getZipPostalCode())
-                            .setCountry(automationPracticeModel.getCountry())
-                            .setAdditionalInformation(automationPracticeModel.getAdditionalInformation())
-                            .setMobilePhone(automationPracticeModel.getMobilePhone())
+                            .useEmail                   (automationPracticeModel.getEmail                   ())
+                            .useTitle                   (automationPracticeModel.getTitle                   ())
+                            .useFirstName               (automationPracticeModel.getFirstName               ())
+                            .useLastName                (automationPracticeModel.getLastName                ())
+                            .usePassword                (automationPracticeModel.getPassword                ())
+                            .useDayOfBirth              (automationPracticeModel.getDayOfBrith              ())
+                            .useMonthOfBirth            (automationPracticeModel.getMonthOfBirth            ())
+                            .useYearOfBirth             (automationPracticeModel.getYearOfBirth             ())
+                            .useCheckNewsLetter         (automationPracticeModel.getCheckNewsLetter         ())
+                            .useCheckEspecialOffers     (automationPracticeModel.getReceiveSpecialOffers    ())
+                            .useCompany                 (automationPracticeModel.getCompany                 ())
+                            .useAddress                 (automationPracticeModel.getAddress                 ())
+                            .useCity                    (automationPracticeModel.getCity                    ())
+                            .useAddress2                (automationPracticeModel.getAddressL2               ())
+                            .useState                   (automationPracticeModel.getState                   ())
+                            .useZipPostal               (automationPracticeModel.getZipPostalCode           ())
+                            .useCountry                 (automationPracticeModel.getCountry                 ())
+                            .useAdditionalInformation   (automationPracticeModel.getAdditionalInformation   ())
+                            .useHomePhone               (automationPracticeModel.getHomePhone               ())
+                            .useMobilePhone             (automationPracticeModel.getMobilePhone             ())
 
             );
 
@@ -100,25 +102,26 @@ public class CreateAnAccountStepDefinition extends SetUp {
             theActorInTheSpotlight().attemptsTo(
                     createAnAccount(),
                     fillCreatedAnAccount()
-                            .useEmail(automationPracticeModel.getEmail())
-                            .setTitle(automationPracticeModel.getTitle())
-                            .setFirstName("")
-                            .setLastName(automationPracticeModel.getLastName())
-                            .setPassword(automationPracticeModel.getPassword())
-                            .setDayOfBirth(automationPracticeModel.getDayOfBrith())
-                            .setMonthOfBirth(automationPracticeModel.getMonthOfBirth())
-                            .setYearOfBirth(automationPracticeModel.getYearOfBirth())
-                            .setCheckNewsLetter(automationPracticeModel.getCheckNewsLetter())
-                            .setCheckEspecialOffers(automationPracticeModel.getReceiveSpecialOffers())
-                            .setCompany(automationPracticeModel.getCompany())
-                            .setAddress(automationPracticeModel.getAddress())
-                            .setCity(automationPracticeModel.getCity())
-                            .setAddress2(automationPracticeModel.getAddressL2())
-                            .setState(automationPracticeModel.getState())
-                            .setZipPostal(automationPracticeModel.getZipPostalCode())
-                            .setCountry(automationPracticeModel.getCountry())
-                            .setAdditionalInformation(automationPracticeModel.getAdditionalInformation())
-                            .setMobilePhone(automationPracticeModel.getMobilePhone())
+                            .useEmail                   (automationPracticeModel.getEmail                   ())
+                            .useTitle                   (automationPracticeModel.getTitle                   ())
+                            .useFirstName               ("")
+                            .useLastName                (automationPracticeModel.getLastName                ())
+                            .usePassword                (automationPracticeModel.getPassword                ())
+                            .useDayOfBirth              (automationPracticeModel.getDayOfBrith              ())
+                            .useMonthOfBirth            (automationPracticeModel.getMonthOfBirth            ())
+                            .useYearOfBirth             (automationPracticeModel.getYearOfBirth             ())
+                            .useCheckNewsLetter         (automationPracticeModel.getCheckNewsLetter         ())
+                            .useCheckEspecialOffers     (automationPracticeModel.getReceiveSpecialOffers    ())
+                            .useCompany                 (automationPracticeModel.getCompany                 ())
+                            .useAddress                 (automationPracticeModel.getAddress                 ())
+                            .useCity                    (automationPracticeModel.getCity                    ())
+                            .useAddress2                (automationPracticeModel.getAddressL2               ())
+                            .useState                   (automationPracticeModel.getState                   ())
+                            .useZipPostal               (automationPracticeModel.getZipPostalCode           ())
+                            .useCountry                 (automationPracticeModel.getCountry                 ())
+                            .useAdditionalInformation   (automationPracticeModel.getAdditionalInformation   ())
+                            .useMobilePhone             (automationPracticeModel.getMobilePhone             ())
+                            .useHomePhone               (automationPracticeModel.getHomePhone               ())
 
             );
 
@@ -144,7 +147,7 @@ public class CreateAnAccountStepDefinition extends SetUp {
     private String compareInWithSystemOutcome(){
         return "\n"
                 + "Data for test : System outcome" + "\n"
-                + MESSAGEALLNOTOKINREGISTER.getValue() + " : "
+                + MESSAGE_ALL_NOT_OK_IN_REGISTER.getValue() + " : "
                 + MSG_ALL_NOT_OK_IN_REGISTER.resolveFor(theActorInTheSpotlight()).getText();
     }
 

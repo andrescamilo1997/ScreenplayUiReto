@@ -15,18 +15,17 @@ import static co.com.sofka.task.automationpractice.contactus.BrowseToContactUS.b
 import static co.com.sofka.task.automationpractice.contactus.FillContactUs.fillContactUs;
 import static co.com.sofka.task.automationpractice.contactus.FillContactUsAll.fillContactUsAll;
 import static co.com.sofka.task.automationpractice.landingpage.OpenLandingPage.openLandingPage;
-import static co.com.sofka.userinterface.automationpractice.contacus.contactUs.MSG_ALL_OK;
-import static co.com.sofka.util.ChooseHeading.HeadingCustomerService;
-import static co.com.sofka.util.ChooseHeading.MESSAGEALLOKINCONTACTUS;
+import static co.com.sofka.userinterface.automationpractice.contacus.ContactUs.MSG_ALL_OK;
+import static co.com.sofka.util.Comparators.*;
 import static co.com.sofka.util.GeneralContacts.generalContacts;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.CoreMatchers.equalTo;
 
 public class ContactUsAutomationPracticeStepDefinition extends SetUp {
-    private static final Logger LOGGER = Logger.getLogger(ContactUsAutomationPracticeStepDefinition.class);
-    private static final String ACTOR_NAME = "User";
-    private AutomationPracticeModel automationPracticeModel;
+    private static final    Logger LOGGER = Logger.getLogger(ContactUsAutomationPracticeStepDefinition.class);
+    private static final    String ACTOR_NAME = "User";
+    private                 AutomationPracticeModel automationPracticeModel;
 
     //fillAll
     @Given("Como usuario le gustaria contactarse con la aplicacion")
@@ -49,10 +48,10 @@ public class ContactUsAutomationPracticeStepDefinition extends SetUp {
             theActorInTheSpotlight().attemptsTo(
                     browseToContactUS(),
                     fillContactUsAll()
-                            .useTheEmail(automationPracticeModel.getEmail())
-                            .useTheHeading(HeadingCustomerService.getValue())
-                            .useTheOrderReference(automationPracticeModel.getOrderReference())
-                            .useTheMessage(automationPracticeModel.getMessage())
+                            .useTheEmail            (automationPracticeModel    .getEmail           ())
+                            .useTheHeading          (HEADING_CUSTOMER_SERVICE   .getValue           ())
+                            .useTheOrderReference   (automationPracticeModel    .getOrderReference  ())
+                            .useTheMessage          (automationPracticeModel    .getMessage         ())
             );
         }catch (Exception exception){
             LOGGER.error(exception.getMessage(),exception);
@@ -74,7 +73,7 @@ public class ContactUsAutomationPracticeStepDefinition extends SetUp {
     private String compareInWithSystemOutcome(){
         return "\n"
                 + "Data for test : System outcome" + "\n"
-                + MESSAGEALLOKINCONTACTUS.getValue() + " : "
+                + MESSAGE_ALL_OK_IN_CONTACT_US.getValue() + " : "
                 + MSG_ALL_OK.resolveFor(theActorInTheSpotlight()).getText();
     }
 
@@ -86,9 +85,9 @@ public class ContactUsAutomationPracticeStepDefinition extends SetUp {
             theActorInTheSpotlight().attemptsTo(
                     browseToContactUS(),
                     fillContactUs()
-                            .useTheEmail(automationPracticeModel.getEmail())
-                            .useTheHeading(HeadingCustomerService.getValue())
-                            .useTheMessage(automationPracticeModel.getMessage())
+                            .useTheEmail    (automationPracticeModel    .getEmail   ())
+                            .useTheHeading  (HEADING_WEB_MASTER         .getValue   ())
+                            .useTheMessage  (automationPracticeModel    .getMessage ())
 
             );
         }catch (Exception exception){
@@ -111,7 +110,7 @@ public class ContactUsAutomationPracticeStepDefinition extends SetUp {
     private String compareInWithSystemOutcomeNotOk(){
         return "\n"
                 + "Data for test : System outcome" + "\n"
-                + MESSAGEALLOKINCONTACTUS.getValue() + " : "
+                + MESSAGE_ALL_OK_IN_CONTACT_US.getValue() + " : "
                 + MSG_ALL_OK.resolveFor(theActorInTheSpotlight()).getText();
 
 

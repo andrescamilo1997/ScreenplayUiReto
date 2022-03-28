@@ -5,11 +5,11 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.conditions.Check;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static co.com.sofka.userinterface.automationpractice.contacus.ContactUs.CHOOSE_HEADING;
 import static co.com.sofka.userinterface.automationpractice.login.Login.*;
-import static co.com.sofka.util.ChooseHeading.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class FillLogin implements Task {
     private String email;
@@ -30,6 +30,8 @@ public class FillLogin implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                WaitUntil.the(EMAIL,isVisible()).forNoMoreThan(10).seconds(),
+
                 Scroll.to(EMAIL),
                 Enter.theValue(email).into(EMAIL),
 
