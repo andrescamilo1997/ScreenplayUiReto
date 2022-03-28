@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle"></span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="cbd51baf197aa02149ad3c8b7c465db147a4d32b2d30a7c7f8d049f949f820e0.html">Ingreso A La Aplicacion</a></span>
+                > <span class="truncate-60"><a
+                    href="b846fb0b34015b33499b1ce423307171cd4c7d258132d5d95b3308a11c33da32.html">ingreso ok </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dafb266f68444cb7f2451c923d70c1428ac45470c361842b818e6daa9bcd4fa8.html"><i class="fa fa-comments-o"></i> Themes</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 27-03-2022 20:00</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Ingreso A La Aplicacion </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Yo como comprador de la tienda<br />
+Quiero poder iniciar sesión en la plataforma<br />
+Para realizar compras a través de internet.
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">ingreso ok
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="a8fd6ded05954b9049ffbb7e32249db53abf191e7939710e56449b06d210a1d6.png" title=" Given como usuario quiero porder registrarme para poder ingresar con mis credenciales a la plataforma" width="1366"/>
+                <img src="a8fd6ded05954b9049ffbb7e32249db53abf191e7939710e56449b06d210a1d6.png" title=" User open landing page" width="1366"/>
+                <img src="a8fd6ded05954b9049ffbb7e32249db53abf191e7939710e56449b06d210a1d6.png" title=" User opens the Landing page" width="1366"/>
+                <img src="9a068c99bc1df3d815759f5a307c1f975ccf5faecc2f4b4c1107a2ce3e5a94c6.png" title=" User opens the Landing page (completed)" width="1366"/>
+                <img src="9a068c99bc1df3d815759f5a307c1f975ccf5faecc2f4b4c1107a2ce3e5a94c6.png" title=" User open landing page (completed)" width="1366"/>
+                <img src="9a068c99bc1df3d815759f5a307c1f975ccf5faecc2f4b4c1107a2ce3e5a94c6.png" title=" User browse to create an account" width="1366"/>
+                <img src="fa9c1ab6eb3b590ab22dc5f270bb4b71decccce92001fb2091313f64b80c67c1.png" title=" User clicks on Elements" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User clicks on Elements (completed)" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User browse to create an account (completed)" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User fill created an account" width="1366"/>
+                <img src="026f781360faa73b2017eeca16089d2769cc9cda6dd9a852c6451514a173a608.png" title=" User enters 'AhmedRunolfsdottir1962@gmail.com' into email" width="1366"/>
+                <img src="9a6742741c4783c9faa89b4c901d149c3e7ed8dbfc02eb3472bfebe69bedae97.png" title=" User enters 'AhmedRunolfsdottir1962@gmail.com' into email (completed)" width="1366"/>
+                <img src="69d1bb85edd4ccf2680e18e0eb8b17937c27cb52a25771fe3bd95dc39862ef1d.png" title=" User clicks on Button send" width="1366"/>
+                <img src="0f1581d22d7eb8344f1ab07d9703da6d36c33081cb7e0bde8a9713e1e8e10274.png" title=" User clicks on Button send (completed)" width="1366"/>
+                <img src="5db30a2b3808d5548ea9643b4a77a7f6a961215625c8e59bca15c3f3cade9197.png" title=" User clicks on Radio Button MRS" width="1366"/>
+                <img src="c0ef5fc5be86a58e919b2fe5c7b9d846e7d45e546c48546488c2c00c6327ccfb.png" title=" User clicks on Radio Button MRS (completed)" width="1366"/>
+                <img src="cee67fb7fdb98271018d9d0972950d397dc9bacb6a7f836f9496d1b6eba592ba.png" title=" User enters 'Ahmed' into First name" width="1366"/>
+                <img src="c5a0814d506d8d59864ed9f9d7f6378f59a0120eaabe6d32ad495f8d06140251.png" title=" User enters 'Ahmed' into First name (completed)" width="1366"/>
+                <img src="7ee1dd6b3604d50180435535cf6e7d8f8784db46e3d0ed2f0e9d3e95503d82c9.png" title=" User enters 'Runolfsdottir' into Last name" width="1366"/>
+                <img src="1b9d4d0286708376be2cb872e359078f123c597bed493c2e1d1dff69c7c919da.png" title=" User enters 'Runolfsdottir' into Last name (completed)" width="1366"/>
+                <img src="65e345105126fa896b570199d39c4380af0f976f5f66327071e30e56178b964d.png" title=" User enters 'Ahmed12345' into pass" width="1366"/>
+                <img src="e7a47c50c21cdadccdb024b272e94ae41307057ef49a75457682dcbbbb52e487.png" title=" User enters 'Ahmed12345' into pass (completed)" width="1366"/>
+                <img src="cb79d0e16784abd6612792b3e2a7d27917d0f03de1fddb74be0657fcc55868dd.png" title=" User selects 20 in Day" width="1366"/>
+                <img src="ccca214c72f8d75396dced35ac11ed9c581fcf0a3896a9bf2c0e5dbdda684c4c.png" title=" User selects 20 in Day (completed)" width="1366"/>
+                <img src="ccca214c72f8d75396dced35ac11ed9c581fcf0a3896a9bf2c0e5dbdda684c4c.png" title=" User selects 5 in Month" width="1366"/>
+                <img src="e2aa252afe091f2aee0fdce0a75a433f29af2b882d2ac574eb44ef9c1e8b8982.png" title=" User selects 5 in Month (completed)" width="1366"/>
+                <img src="e2aa252afe091f2aee0fdce0a75a433f29af2b882d2ac574eb44ef9c1e8b8982.png" title=" User selects 1962 in Year" width="1366"/>
+                <img src="3ebe41dac334c7baf005f1a3e5bbf192664002e9e8038644e72b069c36dcbfc8.png" title=" User selects 1962 in Year (completed)" width="1366"/>
+                <img src="7500d5d89a9e21d743f5b742e99121755821ce029693a62a9f9daf82c7a08ed5.png" title=" User enters 'Nienow, Padberg and Hermann' into Company" width="1366"/>
+                <img src="9e595a6f0652b1c442285f91597535b29f0f5685f0c1c6e961771c99f8bef362.png" title=" User enters 'Nienow, Padberg and Hermann' into Company (completed)" width="1366"/>
+                <img src="da96742c056e66cdb61820dccd2be68f7f86276c0110fb46b01c4c95e5b7eb67.png" title=" User enters '3034 Oberbrunner Circle' into Address" width="1366"/>
+                <img src="17aab8a5974cdc6bd58acbcc8698d71638510362e60dc6ffd1f92834942dadc4.png" title=" User enters '3034 Oberbrunner Circle' into Address (completed)" width="1366"/>
+                <img src="2b7614dcf9de0f5ed43ed6037cf498e48062ff2d3eebee14a5a20b857deaf7d2.png" title=" User enters 'Apt. 343' into Address" width="1366"/>
+                <img src="eb260b1842fcab3b6477826f8a84da0135626a0dee22bb6108107f0cf20a83ca.png" title=" User enters 'Apt. 343' into Address (completed)" width="1366"/>
+                <img src="bdcb5998de9ea8a8543aada6ad9794e84ead2597f9c51ac5fc2f40f1af323a36.png" title=" User enters 'South Pierreberg' into city" width="1366"/>
+                <img src="93fc99c9410d91a2fe5aad1b0414519f2987895956b6a601d9572fd472af4150.png" title=" User enters 'South Pierreberg' into city (completed)" width="1366"/>
+                <img src="ad915f0e23e9c7dab90a7423642dab3b81e62cf643e2848a7f3cbe5d879bca14.png" title=" User select Nevada on State" width="1366"/>
+                <img src="bb490874b1646edf2aa9214160f02756cb331f300d630a7ca944a217807736a8.png" title=" User select Nevada on State (completed)" width="1366"/>
+                <img src="a9a127896d04bce3813057bb94b8876747bc1c2065b566020ea6939ac5cd3ea2.png" title=" User enters '96183' into Zip Code" width="1366"/>
+                <img src="0e3a730fb82e084285549ab29497d020c24efebf6a25278904aee16028382fd3.png" title=" User enters '96183' into Zip Code (completed)" width="1366"/>
+                <img src="999e13d108246521e485c38dd1577bce5f684c1a561c574905725b5068adf883.png" title=" User select United States on Country" width="1366"/>
+                <img src="999e13d108246521e485c38dd1577bce5f684c1a561c574905725b5068adf883.png" title=" User select United States on Country (completed)" width="1366"/>
+                <img src="72be59f1401f46a733435a672d1f2ade26c08b83884a0e348e66fc12530b81de.png" title=" User enters 'Ahmed Runolfsdottir' into Other information" width="1366"/>
+                <img src="531ceb03a8a16e6907902f3b96d03dda9949da8c5e0f663697081ef6accb6326.png" title=" User enters 'Ahmed Runolfsdottir' into Other information (completed)" width="1366"/>
+                <img src="a07116afa93e5bc20fd01a64bcddb234fa0b00831cbb7070b950ace0728203f6.png" title=" User enters '928970824' into Home phone" width="1366"/>
+                <img src="0d7b985739286b58a37717547c37240c238ebc50398edb6cedadd1b3998be318.png" title=" User enters '928970824' into Home phone (completed)" width="1366"/>
+                <img src="f3a7ef655e4fb359ebe269bea34184410707661687c188a9053b261476970f78.png" title=" User enters '1-457-490-9857' into Mobile phone" width="1366"/>
+                <img src="9c534a7f2379833ba1235764a685343e79e92e757f41a72fbca81d4e17f9b476.png" title=" User enters '1-457-490-9857' into Mobile phone (completed)" width="1366"/>
+                <img src="9b76afcb0797dc0abf7bcddb2606cbd93641cda384fa664eeddb3489b0ced5a8.png" title=" User clicks on End button register" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" User clicks on End button register (completed)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" User fill created an account (completed)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" User browse to create an account for login" width="1366"/>
+                <img src="dda7c7380f1492a6082dc67c8fead52f238be54e33b6fc5deaed7022c43da8ab.png" title=" User clicks on Log out" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User clicks on Log out (completed)" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User clicks on Elements" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User clicks on Elements (completed)" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" User browse to create an account for login (completed)" width="1366"/>
+                <img src="a280df3cc6156c6f029c00de1352c751251cb122b96a5e887277ee1817f5b74f.png" title=" Given como usuario quiero porder registrarme para poder ingresar con mis credenciales a la plataforma (completed)" width="1366"/>
+                <img src="9feaf722dd8c51c040228620fd1e5fab03814c2d276f9e837486cc9892a64aec.png" title=" When con las credenciales, accedo a mi cuenta en la plataforma" width="1366"/>
+                <img src="9feaf722dd8c51c040228620fd1e5fab03814c2d276f9e837486cc9892a64aec.png" title=" User fill login" width="1366"/>
+                <img src="9feaf722dd8c51c040228620fd1e5fab03814c2d276f9e837486cc9892a64aec.png" title=" User enters 'AhmedRunolfsdottir1962@gmail.com' into email" width="1366"/>
+                <img src="d947dcf6cc826083cd490ef770c77ad4d4f1ce6ab8fed37a11c020cafba83516.png" title=" User enters 'AhmedRunolfsdottir1962@gmail.com' into email (completed)" width="1366"/>
+                <img src="ef18085811ac855a63f722e1337feab583da230bb662993402830bc99cab60ca.png" title=" User enters 'Ahmed12345' into password" width="1366"/>
+                <img src="1ccdcee398bf77514a7d1377ab9202e713478c1cad2785e14a2fbab99282465e.png" title=" User enters 'Ahmed12345' into password (completed)" width="1366"/>
+                <img src="4b6d4afabf46e7f160c45664f45525c61af1f032228f4813df02cc0eb4ec406b.png" title=" User clicks on btn login " width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" User clicks on btn login  (completed)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" User fill login (completed)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" When con las credenciales, accedo a mi cuenta en la plataforma (completed)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" Then entro a mi cuenta" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" Then login should be (true)" width="1366"/>
+                <img src="52b970a1636fa7ca3937ed612410034e2b6506fb5392633f9d9e5b5b60f6c486.png" title=" Then entro a mi cuenta (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.2.9</span>
+</div>
+</body>
+</html>

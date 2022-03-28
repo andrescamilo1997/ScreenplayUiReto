@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Contactenos","llenar datos completos","SUCCESS","2022-03-27T19:57:28.734-05:00[America/Bogota]","0.0","26.31"
+"Contactenos","llenar datos obligatorios","SUCCESS","2022-03-27T19:57:55.967-05:00[America/Bogota]","0.0","21.21"
+"Registrarse","llenar datos completos","SUCCESS","2022-03-27T19:58:41.295-05:00[America/Bogota]","0.0","35.41"
+"Registrarse","No llenar datos algunos datos obligatorios","SUCCESS","2022-03-27T19:59:17.64-05:00[America/Bogota]","0.0","36.44"
+"Ingreso a la aplicacion","ingreso ok","SUCCESS","2022-03-27T20:00:18.45-05:00[America/Bogota]","0.0","44.3"
+"Ingreso a la aplicacion","ingreso no ok","SUCCESS","2022-03-27T20:01:03.722-05:00[America/Bogota]","0.0","54.2"

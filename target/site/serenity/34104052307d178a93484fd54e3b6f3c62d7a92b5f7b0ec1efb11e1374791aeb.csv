@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Ingreso a la aplicacion","ingreso ok","SUCCESS","2022-03-27T20:00:18.45-05:00[America/Bogota]","0.0","44.3"
+"Ingreso a la aplicacion","ingreso no ok","SUCCESS","2022-03-27T20:01:03.722-05:00[America/Bogota]","0.0","54.2"

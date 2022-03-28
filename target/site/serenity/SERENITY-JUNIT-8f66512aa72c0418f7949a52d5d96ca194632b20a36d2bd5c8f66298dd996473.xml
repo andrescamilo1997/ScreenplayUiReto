@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Registrarse" skipped="0" tests="2" time="71.85" timestamp="2022-03-27 07:58:41"><testcase name="llenar datos completos"/><testcase name="No llenar datos algunos datos obligatorios"/></testsuite>
